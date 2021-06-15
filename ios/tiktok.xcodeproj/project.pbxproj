@@ -14,6 +14,7 @@
 		6C952D4FFFD1AEFA35539A7E /* libPods-tiktok-tiktokTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0D095461ECDBE40E1EBDF0 /* libPods-tiktok-tiktokTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8EAEFDE5CBA24D38642A61B5 /* libPods-tiktok.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45502A5B138C8A90779D6EEA /* libPods-tiktok.a */; };
+		BA192D722678E80100DCE4A3 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA192D712678E80100DCE4A3 /* BootSplash.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = tiktok/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BD8EF2D16C4ED38595B1795 /* Pods-tiktok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiktok.debug.xcconfig"; path = "Target Support Files/Pods-tiktok/Pods-tiktok.debug.xcconfig"; sourceTree = "<group>"; };
 		964BF472E974A9339908F3E1 /* Pods-tiktok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiktok.release.xcconfig"; path = "Target Support Files/Pods-tiktok/Pods-tiktok.release.xcconfig"; sourceTree = "<group>"; };
+		BA192D712678E80100DCE4A3 /* BootSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootSplash.storyboard; sourceTree = "<group>"; };
 		BB224FC58902817E79213C71 /* Pods-tiktok-tiktokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiktok-tiktokTests.debug.xcconfig"; path = "Target Support Files/Pods-tiktok-tiktokTests/Pods-tiktok-tiktokTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBE827BCAA828FDAD522833 /* Pods-tiktok-tiktokTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiktok-tiktokTests.release.xcconfig"; path = "Target Support Files/Pods-tiktok-tiktokTests/Pods-tiktok-tiktokTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -92,6 +94,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				BA192D712678E80100DCE4A3 /* BootSplash.storyboard */,
 			);
 			name = tiktok;
 			sourceTree = "<group>";
@@ -104,7 +107,6 @@
 				BB224FC58902817E79213C71 /* Pods-tiktok-tiktokTests.debug.xcconfig */,
 				BCBE827BCAA828FDAD522833 /* Pods-tiktok-tiktokTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -243,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA192D722678E80100DCE4A3 /* BootSplash.storyboard in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
