@@ -13,11 +13,13 @@ import RNBootSplash from 'react-native-bootsplash';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import HomeScreenContainer from './screens/home/HomeScreenContainer';
+import HomeScreenContainer from './screens/home/home-screen-container';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import StyleConstants from './styles';
 import CreateButton from './components/create-button';
+import InboxScreenContainer from './screens/inbox/inbox-screen-container';
+import MeScreenContainer from './screens/me/me-screen-container';
 
 
 const Tab = createBottomTabNavigator();
@@ -50,15 +52,16 @@ const App: () => Node = () => {
                     },
                 })}
                 tabBarOptions={{
-                    activeTintColor: 'black',
-                    inactiveTintColor: 'gray',
+                    activeTintColor: StyleConstants.BLACK,
+                    inactiveTintColor: StyleConstants.SPANISH_GRAY,
+                    style: {backgroundColor: StyleConstants.WHITE, borderTopWidth: 0},
                 }}>
                 <Tab.Screen name="Home" component={HomeScreenContainer}/>
                 <Tab.Screen name="Discover" component={HomeScreenContainer}/>
                 <Tab.Screen name="Create" component={HomeScreenContainer}
                             options={{title: '', tabBarIcon: (props) => <CreateButton/>}}/>
-                <Tab.Screen name="Inbox" component={HomeScreenContainer}/>
-                <Tab.Screen name="Me" component={HomeScreenContainer}/>
+                <Tab.Screen name="Inbox" component={InboxScreenContainer}/>
+                <Tab.Screen name="Me" component={MeScreenContainer}/>
             </Tab.Navigator>
         </NavigationContainer>
     </SafeAreaProvider>;

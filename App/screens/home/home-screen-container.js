@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeScreenView from './HomeScreenView';
+import HomeScreenView from './home-screen-view';
 
 function HomeScreenContainer(props) {
     return <HomeScreenView />
