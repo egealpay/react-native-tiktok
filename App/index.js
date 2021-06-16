@@ -16,6 +16,8 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import HomeScreenContainer from './screens/home/HomeScreenContainer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import StyleConstants from './styles';
+import CreateButton from './components/create-button';
 
 
 const Tab = createBottomTabNavigator();
@@ -36,29 +38,6 @@ const App: () => Node = () => {
                             iconName = focused ? 'home' : 'home-outline';
                         } else if (route.name === 'Discover') {
                             iconName = focused ? 'search' : 'search-outline';
-                        } else if (route.name === 'Create') {
-                            iconName = 'plus';
-                            return <View style={{
-                                position: 'absolute',
-                                backgroundColor: '#fd3e3e',
-                                paddingRight: 4,
-                                borderRadius: 8,
-                                top: 16,
-                            }}>
-                                <View style={{
-                                    backgroundColor: '#4de8f4',
-                                    paddingLeft: 4,
-                                    borderRadius: 8,
-                                }}>
-                                    <View style={{
-                                        backgroundColor: 'black',
-                                        paddingHorizontal: 6,
-                                        borderRadius: 8,
-                                    }}>
-                                        <MaterialCommunityIcons name={iconName} size={size} color={'white'}/>
-                                    </View>
-                                </View>
-                            </View>;
                         } else if (route.name === 'Inbox') {
                             iconName = focused ? 'message-text' : 'message-text-outline';
                             return <MaterialCommunityIcons name={iconName} size={size} color={color}/>;
@@ -76,7 +55,8 @@ const App: () => Node = () => {
                 }}>
                 <Tab.Screen name="Home" component={HomeScreenContainer}/>
                 <Tab.Screen name="Discover" component={HomeScreenContainer}/>
-                <Tab.Screen name="Create" component={HomeScreenContainer} options={{title: ''}}/>
+                <Tab.Screen name="Create" component={HomeScreenContainer}
+                            options={{title: '', tabBarIcon: (props) => <CreateButton/>}}/>
                 <Tab.Screen name="Inbox" component={HomeScreenContainer}/>
                 <Tab.Screen name="Me" component={HomeScreenContainer}/>
             </Tab.Navigator>
@@ -84,6 +64,5 @@ const App: () => Node = () => {
     </SafeAreaProvider>;
 };
 
-const styles = StyleSheet.create({});
 
 export default App;
