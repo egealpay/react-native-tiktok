@@ -16,4 +16,17 @@ export const TRANSLATIONS_EN = {
     'contentAndActivity': 'CONTENT & ACTIVITY',
     'appLanguage': 'App language',
     'contentPreferences': 'Content preferences',
+    'cacheAndCellularData': 'CACHE & CELLULAR DATA',
+    'freeUpSpace': 'Free up space',
+    'dataSaver': 'Data Saver',
+    'support': 'SUPPORT',
+    'reportProblem': 'Report a Problem',
+    'helpCenter': 'Help Center',
+    'safetyCenter': 'Safety Center',
+    'creatorPortal': 'Creator Portal',
+    'about': 'ABOUT',
+    'communityGuidelines': 'Community Guidelines',
+    'termsOfService': 'Terms of Service',
+    'privacyPolicy': 'Privacy Policy',
+    'copyrightPolicy': 'Copyright Policy'
 };
