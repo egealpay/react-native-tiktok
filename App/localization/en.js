@@ -8,5 +8,12 @@ export const TRANSLATIONS_EN = {
     'discover': 'Discover',
     'create': 'Create',
     'inbox': 'Inbox',
-    'me': 'Me'
+    'me': 'Me',
+    'settingsAndPrivacy': 'Settings and Privacy',
+    'account': 'ACCOUNT',
+    'myAccount': 'My account',
+    'privacy': 'Privacy',
+    'contentAndActivity': 'CONTENT & ACTIVITY',
+    'appLanguage': 'App language',
+    'contentPreferences': 'Content preferences',
 };
