@@ -10,11 +10,23 @@ import InboxStack from './inbox-stack';
 import MeStack from './me-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useTranslation} from 'react-i18next';
+import {getFocusedRouteNameFromRoute} from '@react-navigation/core';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = props => {
     const {t, i18n} = useTranslation();
+
+    // NOT RECOMMENDED METHOD !
+    const getTabBarVisibility = (route) => {
+        const routeName = getFocusedRouteNameFromRoute(route) ?? '';
+
+        if (routeName === 'SettingsScreen') {
+            return false;
+        }
+
+        return true;
+    };
 
     return <Tab.Navigator
         screenOptions={({route}) => ({
@@ -46,7 +58,9 @@ const TabNavigator = props => {
         <Tab.Screen name={t('create')} component={CreateStack}
                     options={{title: '', tabBarIcon: (props) => <CreateButton/>}}/>
         <Tab.Screen name={t('inbox')} component={InboxStack}/>
-        <Tab.Screen name={t('me')} component={MeStack}/>
+        <Tab.Screen name={t('me')} component={MeStack} options={({route}) => ({
+            tabBarVisible: getTabBarVisibility(route),
+        })}/>
     </Tab.Navigator>;
 };
 
