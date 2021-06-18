@@ -9,10 +9,13 @@ import CreateButton from '../components/create-button';
 import InboxStack from './inbox-stack';
 import MeStack from './me-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useTranslation} from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = props => {
+    const {t, i18n} = useTranslation();
+
     return <Tab.Navigator
         screenOptions={({route}) => ({
             tabBarIcon: ({focused, color, size}) => {
@@ -38,12 +41,12 @@ const TabNavigator = props => {
             inactiveTintColor: StyleConstants.SPANISH_GRAY,
             style: {backgroundColor: StyleConstants.WHITE, borderTopWidth: 0},
         }}>
-        <Tab.Screen name="Home" component={HomeStack}/>
-        <Tab.Screen name="Discover" component={DiscoverStack}/>
-        <Tab.Screen name="Create" component={CreateStack}
+        <Tab.Screen name={t('home')} component={HomeStack}/>
+        <Tab.Screen name={t('discover')} component={DiscoverStack}/>
+        <Tab.Screen name={t('create')} component={CreateStack}
                     options={{title: '', tabBarIcon: (props) => <CreateButton/>}}/>
-        <Tab.Screen name="Inbox" component={InboxStack}/>
-        <Tab.Screen name="Me" component={MeStack}/>
+        <Tab.Screen name={t('inbox')} component={InboxStack}/>
+        <Tab.Screen name={t('me')} component={MeStack}/>
     </Tab.Navigator>;
 };
 

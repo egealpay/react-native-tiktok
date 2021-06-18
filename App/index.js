@@ -12,6 +12,7 @@ import RNBootSplash from 'react-native-bootsplash';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import TabNavigator from './navigation/tab-navigator';
+import './localization/i18';
 
 
 const App: () => Node = () => {
