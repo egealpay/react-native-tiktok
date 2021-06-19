@@ -12,6 +12,9 @@ const SingleRow = props => {
         <View style={{flexDirection: 'row', paddingLeft: 16, marginVertical: 16, alignItems: 'center'}}>
             {props.item.icon}
             <Text style={{marginLeft: 8}}>{props.t(props.item.title)}</Text>
+            <View style={{flex: 1, alignItems: 'flex-end', paddingRight: 16}}>
+                {props.item.rightIcon}
+            </View>
         </View>
         {isLastElementInSection() &&
         <View style={{

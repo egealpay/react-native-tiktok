@@ -28,5 +28,6 @@ export const TRANSLATIONS_EN = {
     'communityGuidelines': 'Community Guidelines',
     'termsOfService': 'Terms of Service',
     'privacyPolicy': 'Privacy Policy',
-    'copyrightPolicy': 'Copyright Policy'
+    'copyrightPolicy': 'Copyright Policy',
+    'english': 'English'
 };

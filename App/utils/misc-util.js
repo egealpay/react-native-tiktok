@@ -23,4 +23,16 @@ export default class MiscUtil {
             }
         }
     }
+
+    static getHumanReadableLanguage() {
+        let locale = this.getLanguage();
+
+        switch (locale) {
+            case 'en':
+                return 'english';
+            case 'tr':
+            default:
+                return 'turkish';
+        }
+    }
 }

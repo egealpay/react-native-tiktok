@@ -8,7 +8,9 @@ import BaseView from '../../components/base-view';
 const MeScreenView = props =>
     <BaseView
         style={{justifyContent: 'center', alignItems: 'center'}}>
-        <EmptyScreen icon={<Ionicons name={'person-outline'} size={64} color={StyleConstants.SILVER_SAND}/>}
+        <EmptyScreen icon={<Ionicons name={'person-outline'}
+                                     size={64}
+                                     color={StyleConstants.SILVER_SAND}/>}
                      text={props.t('signUpForAccount')}/>
     </BaseView>;
 
