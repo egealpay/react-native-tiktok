@@ -15,7 +15,7 @@ const SignUpButton = props => {
             style={[{backgroundColor: StyleConstants.RED, paddingVertical: 8, paddingHorizontal: 96}, props.style]}>
             <Text style={{textAlign: 'center', color: StyleConstants.WHITE, fontWeight: 'bold'}}>{t('signUp')}</Text>
         </TouchableOpacity>
-        <SignUpModal isVisible={isSignUpModalVisible} onBackdropPress={() => setIsSignUpModalVisible(false)}/>
+        <SignUpModal t={t} isVisible={isSignUpModalVisible} onBackdropPress={() => setIsSignUpModalVisible(false)}/>
     </View>;
 };
 

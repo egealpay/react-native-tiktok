@@ -29,5 +29,14 @@ export const TRANSLATIONS_EN = {
     'termsOfService': 'Terms of Service',
     'privacyPolicy': 'Privacy Policy',
     'copyrightPolicy': 'Copyright Policy',
-    'english': 'English'
+    'english': 'English',
+    'signUpForTiktok': 'Sign up for TikTok',
+    'signUpSubText': 'Create a profile, follow other accounts, make your own videos, and more.',
+    'usePhoneOrEmail': 'Use phone or email',
+    'useFacebook': 'Continue with Facebook',
+    'useGoogle': 'Continue with Google',
+    'useTwitter': 'Continue with Twitter',
+    'signUpTermsAndPrivacy': 'By signing up, you agree to our Terms of Service and acknowledge that you have read our Privacy Policy to learn how we collect, use, and share your data.',
+    'alreadyHaveAccount': 'Already have an account?',
+    'logIn': 'Log in'
 };
