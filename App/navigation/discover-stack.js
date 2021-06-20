@@ -1,6 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreenContainer from '../screens/home/home-screen-container';
+import DiscoverScreenContainer from '../screens/discover/discover-screen-container';
 
 const discoverStack = createStackNavigator();
 
@@ -11,9 +12,9 @@ const DiscoverStack = props => {
         }}>
         <discoverStack.Screen
             name="DiscoverStack"
-            component={HomeScreenContainer}
+            component={DiscoverScreenContainer}
         />
     </discoverStack.Navigator>;
-}
+};
 
 export default DiscoverStack;

@@ -25,7 +25,9 @@ const DATA = [{
 function SignUpModal(props) {
     const renderHeader = () => {
         return <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <MaterialCommunityIcons name={'close'} color={StyleConstants.SPANISH_GRAY} size={24}/>
+            <TouchableOpacity onPress={() => props.onCrossPressed()}>
+                <MaterialCommunityIcons name={'close'} color={StyleConstants.SPANISH_GRAY} size={24}/>
+            </TouchableOpacity>
             <MaterialCommunityIcons name={'help-circle-outline'} color={StyleConstants.SPANISH_GRAY} size={24}/>
         </View>;
     };

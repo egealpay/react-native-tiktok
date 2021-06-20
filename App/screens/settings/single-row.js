@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import StyleConstants from '../../styles';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const SingleRow = props => {
 
@@ -8,7 +9,7 @@ const SingleRow = props => {
         return props.index === props.section.data.length - 1;
     };
 
-    return <View>
+    return <TouchableOpacity onPress={() => props.item.onPress && props.item.onPress()}>
         <View style={{flexDirection: 'row', paddingLeft: 16, marginVertical: 16, alignItems: 'center'}}>
             {props.item.icon}
             <Text style={{marginLeft: 8}}>{props.t(props.item.title)}</Text>
@@ -25,7 +26,7 @@ const SingleRow = props => {
             flexDirection: 'row',
             flex: 1,
         }}/>}
-    </View>;
+    </TouchableOpacity>;
 };
 
 export default SingleRow;

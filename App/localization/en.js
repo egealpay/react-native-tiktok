@@ -38,5 +38,6 @@ export const TRANSLATIONS_EN = {
     'useTwitter': 'Continue with Twitter',
     'signUpTermsAndPrivacy': 'By signing up, you agree to our Terms of Service and acknowledge that you have read our Privacy Policy to learn how we collect, use, and share your data.',
     'alreadyHaveAccount': 'Already have an account?',
-    'logIn': 'Log in'
+    'logIn': 'Log in',
+    'search': 'Search'
 };

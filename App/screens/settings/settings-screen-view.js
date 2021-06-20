@@ -8,6 +8,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import SignUpButton from '../../components/sign-up-button';
 import MiscUtil from '../../utils/misc-util';
+import SignUpModal from '../../components/sign-up-modal';
 
 const SettingsScreenView = props => {
 
@@ -18,6 +19,7 @@ const SettingsScreenView = props => {
                 title: 'myAccount',
                 icon: <Ionicons name={'person-outline'} size={18} color={StyleConstants.SPANISH_GRAY}/>,
                 rightIcon: <SignUpButton style={{paddingHorizontal: 12, paddingVertical: 4}}/>,
+                onPress: () => props.toggleSignUpModal(),
             }, {
                 title: 'privacy',
                 icon: <MaterialIcons name={'lock-outline'} size={18} color={StyleConstants.SPANISH_GRAY}/>,
@@ -97,6 +99,10 @@ const SettingsScreenView = props => {
                     style={{paddingLeft: 16, color: StyleConstants.SPANISH_GRAY, marginTop: 8}}>{props.t(title)}</Text>
             )}
         />
+        <SignUpModal t={props.t}
+                     isVisible={props.isSignUpModalVisible}
+                     onBackdropPress={() => props.toggleSignUpModal()}
+                     onCrossPressed={() => props.toggleSignUpModal()}/>
     </View>;
 };
 
