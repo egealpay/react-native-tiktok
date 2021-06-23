@@ -1,19 +1,16 @@
 import React from 'react';
-import {View, FlatList} from 'react-native';
+import {View, FlatList, TouchableWithoutFeedback} from 'react-native';
 import StyleConstants from '../../styles';
 import VideoPost from './video-post';
+import Video from 'react-native-video';
 
 const HomeScreenView = (props) => {
 
-    const renderItem = ({item, index}) => (
-        <VideoPost item={item} index={index} navigation={props.navigation}/>
-    );
-
-    return <View style={{flex: 1, backgroundColor: StyleConstants.WHITE}}>
+    return <View>
         <FlatList
-            style={{flex: 1}}
             data={props.posts}
-            renderItem={renderItem}
+            renderItem={({item, index}) => <VideoPost item={item} index={index} navigation={props.navigation}/>}
+            showsVerticalScrollIndicator={false}
             keyExtractor={(item, index) => index}
         />
     </View>;
