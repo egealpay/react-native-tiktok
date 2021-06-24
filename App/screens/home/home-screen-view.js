@@ -12,6 +12,8 @@ const HomeScreenView = (props) => {
             renderItem={({item, index}) => <VideoPost item={item} index={index} navigation={props.navigation}/>}
             showsVerticalScrollIndicator={false}
             keyExtractor={(item, index) => index}
+            pagingEnabled={true}
+            bounces={false}
         />
     </View>;
 };

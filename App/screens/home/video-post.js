@@ -2,26 +2,20 @@ import React, {useEffect, useState} from 'react';
 import Video from 'react-native-video';
 import {TouchableWithoutFeedback, View, Dimensions} from 'react-native';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import StyleConstants from '../../styles';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import Fontisto from 'react-native-vector-icons/Fontisto';
+import {useFocusEffect} from '@react-navigation/native';
+
 import SideBar from './side-bar';
 
 const VideoPost = ({item, index, navigation}) => {
     const [isPaused, setIsPaused] = useState(true);
 
-    /*useEffect(() => {
-        const blur = navigation.addListener('blur', () => {
-            setIsPaused(true);
-        });
-
-        const focus = navigation.addListener('focus', () => {
+    /*useFocusEffect(
+        React.useCallback(() => {
             setIsPaused(false);
-        });
 
-        return blur, focus;
-    }, [navigation]);*/
+            return () => setIsPaused(true);
+        }, []),
+    );*/
 
     return <View style={{
         alignItems: 'flex-end',
@@ -29,9 +23,10 @@ const VideoPost = ({item, index, navigation}) => {
         width: '100%',
         height: Dimensions.get('window').height - useBottomTabBarHeight(),
     }}>
-        <SideBar profileImageUrl={item.profileImageUrl} numOfLikes={item.numOfLikes} numOfComments={item.numOfComments} numOfShare={item.numOfShare}/>
+        <SideBar profileImageUrl={item.profileImageUrl} numOfLikes={item.numOfLikes} numOfComments={item.numOfComments}
+                 numOfShare={item.numOfShare}/>
         <TouchableWithoutFeedback onPress={() => setIsPaused(!isPaused)}>
-            <Video source={require('../../assets/ssstiktok_1624187822.mp4')}
+            <Video source={item.video}
                    paused={isPaused}
                    style={{
                        position: 'absolute',

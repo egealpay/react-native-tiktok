@@ -9,6 +9,13 @@ function HomeScreenContainer(props) {
         numOfLikes: '27.0K',
         numOfComments: '333',
         numOfShare: '216',
+    }, {
+        id: 2,
+        video: require('../../assets/ssstiktok_1624522820.mp4'),
+        profileImageUrl: 'https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/69e3328223da5577e78ce7f33729c2dd~c5_720x720.jpeg?x-expires=1624608000&x-signature=NkuyzXFmHlIGRuIRr7gSELgAJj0%3D',
+        numOfLikes: '12.0K',
+        numOfComments: '71',
+        numOfShare: '58',
     }]);
 
     return <HomeScreenView navigation={props.navigation} posts={posts}/>;
