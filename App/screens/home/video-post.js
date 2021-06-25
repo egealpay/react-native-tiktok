@@ -9,14 +9,6 @@ import SideBar from './side-bar';
 const VideoPost = ({item, index, navigation}) => {
     const [isPaused, setIsPaused] = useState(true);
 
-    /*useFocusEffect(
-        React.useCallback(() => {
-            setIsPaused(false);
-
-            return () => setIsPaused(true);
-        }, []),
-    );*/
-
     return <View style={{
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
