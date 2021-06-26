@@ -1,5 +1,4 @@
 import React from 'react';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import StyleConstants from '../../styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import {View, Text, Image} from 'react-native';
@@ -18,7 +17,10 @@ function SideBar(props) {
     };
 
     const renderProfileImage = (profileImageUrl) => {
-        return <View
+        return <TouchableOpacity
+            onPress={() => props.navigation.navigate('UserProfile', {
+                user: props.item.user,
+            })}
             style={{
                 width: 48,
                 height: 48,
@@ -35,14 +37,14 @@ function SideBar(props) {
                     uri: profileImageUrl,
                 }}
             />
-        </View>;
+        </TouchableOpacity>;
     };
 
     return <View style={{zIndex: 10, paddingRight: 8, marginBottom: 16, alignItems: 'center'}}>
-        {renderProfileImage(props.profileImageUrl)}
-        {renderIconAndText('heart', props.numOfLikes)}
-        {renderIconAndText('commenting', props.numOfComments)}
-        {renderIconAndText('share-a', props.numOfShare)}
+        {renderProfileImage(props.item.user.profileImageUrl)}
+        {renderIconAndText('heart', props.item.numOfLikes)}
+        {renderIconAndText('commenting', props.item.numOfComments)}
+        {renderIconAndText('share-a', props.item.numOfShare)}
     </View>;
 }
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import {View, FlatList, TouchableWithoutFeedback} from 'react-native';
-import StyleConstants from '../../styles';
 import VideoPost from './video-post';
-import Video from 'react-native-video';
 
 const HomeScreenView = (props) => {
 

@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Video from 'react-native-video';
 import {TouchableWithoutFeedback, View, Dimensions} from 'react-native';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
-import {useFocusEffect} from '@react-navigation/native';
 
 import SideBar from './side-bar';
 
@@ -15,8 +14,9 @@ const VideoPost = ({item, index, navigation}) => {
         width: '100%',
         height: Dimensions.get('window').height - useBottomTabBarHeight(),
     }}>
-        <SideBar profileImageUrl={item.profileImageUrl} numOfLikes={item.numOfLikes} numOfComments={item.numOfComments}
-                 numOfShare={item.numOfShare}/>
+        <SideBar
+            navigation={navigation}
+            item={item}/>
         <TouchableWithoutFeedback onPress={() => setIsPaused(!isPaused)}>
             <Video source={item.video}
                    paused={isPaused}
