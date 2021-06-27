@@ -11,6 +11,7 @@ function HomeScreenContainer(props) {
             numFollowing: '1210',
             numFollowers: '118.5M',
             numLikes: '9.5B',
+            profileDetails: 'No bio yet.'
         },
         numOfLikes: '27.0K',
         numOfComments: '333',
@@ -21,6 +22,10 @@ function HomeScreenContainer(props) {
         user: {
             userName: 'addisonre',
             profileImageUrl: 'https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/69e3328223da5577e78ce7f33729c2dd~c5_720x720.jpeg?x-expires=1624608000&x-signature=NkuyzXFmHlIGRuIRr7gSELgAJj0%3D',
+            numFollowing: '2451',
+            numFollowers: '81.5M',
+            numLikes: '5.3B',
+            profileDetails: 'OBSESSED out on all platforms.'
         },
         numOfLikes: '12.0K',
         numOfComments: '71',

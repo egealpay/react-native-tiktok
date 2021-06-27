@@ -1,9 +1,53 @@
 import React from 'react';
 import {Image, View, Text} from 'react-native';
 import StyleConstants from '../../styles';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Tabs from './tabs';
 
 
 const UserProfileScreenView = props => {
+
+    const renderDetails = () => {
+        return <View style={{marginTop: 16}}>
+            <Text>{props.user.profileDetails}</Text>
+        </View>;
+    };
+
+    const renderButtons = () => {
+        return <View style={{flexDirection: 'row', marginTop: 16}}>
+            <TouchableOpacity style={{backgroundColor: StyleConstants.RED}}>
+                <Text style={{
+                    fontSize: 16,
+                    color: StyleConstants.WHITE,
+                    paddingHorizontal: 48,
+                    paddingVertical: 16,
+                    fontWeight: '700',
+                }}>Follow</Text>
+            </TouchableOpacity>
+            <View style={{
+                marginLeft: 8,
+                justifyContent: 'center',
+                borderRadius: 4,
+                borderWidth: 1,
+                paddingHorizontal: 12,
+                borderColor: StyleConstants.SILVER_SAND,
+            }}>
+                <MaterialCommunityIcons name={'instagram'} size={24}/>
+            </View>
+            <View style={{
+                marginLeft: 8,
+                justifyContent: 'center',
+                borderRadius: 4,
+                borderWidth: 1,
+                paddingHorizontal: 12,
+                borderColor: StyleConstants.SILVER_SAND,
+            }}>
+                <Ionicons name={'caret-down-outline'} size={18}/>
+            </View>
+        </View>;
+    };
 
     const renderTextsAsColumn = (textBig, textSmall) => {
         return <View style={{flexDirection: 'column', alignItems: 'center'}}>
@@ -32,7 +76,6 @@ const UserProfileScreenView = props => {
         return <View
             style={{
                 marginTop: 24,
-                backgroundColor: StyleConstants.WHITE,
                 justifyContent: 'center',
                 alignItems: 'center',
             }}>
@@ -52,6 +95,9 @@ const UserProfileScreenView = props => {
     return <View style={{flex: 1, backgroundColor: StyleConstants.WHITE, alignItems: 'center'}}>
         {renderProfileImage()}
         {renderBasicInformation()}
+        {renderButtons()}
+        {renderDetails()}
+        <Tabs/>
     </View>;
 };
 
