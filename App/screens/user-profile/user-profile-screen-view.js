@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View, Text} from 'react-native';
+import {Image, View, Text, ScrollView, Dimensions} from 'react-native';
 import StyleConstants from '../../styles';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -8,6 +8,7 @@ import Tabs from './tabs';
 
 
 const UserProfileScreenView = props => {
+    const [currentIndex, setCurrentIndex] = React.useState(0);
 
     const renderDetails = () => {
         return <View style={{marginTop: 16}}>
@@ -92,13 +93,91 @@ const UserProfileScreenView = props => {
         </View>;
     };
 
-    return <View style={{flex: 1, backgroundColor: StyleConstants.WHITE, alignItems: 'center'}}>
-        {renderProfileImage()}
-        {renderBasicInformation()}
-        {renderButtons()}
-        {renderDetails()}
-        <Tabs/>
-    </View>;
+    const renderSingleTabBar = (tabIndex, iconName) => {
+        return <View style={{flex: 1, alignItems: 'center'}}>
+            <TouchableOpacity onPress={() => setCurrentIndex(tabIndex)}>
+                <MaterialCommunityIcons
+                    name={iconName}
+                    size={24}
+                    color={currentIndex === tabIndex ? '#000' : StyleConstants.SPANISH_GRAY}
+                />
+            </TouchableOpacity>
+            <View style={{height: 2, width: 48, backgroundColor: currentIndex === tabIndex ? '#000' : 'transparent'}}/>
+        </View>;
+    };
+
+    const renderTabBars = () => {
+        return <View style={{
+            flexDirection: 'row',
+            flex: 1,
+            marginTop: 8,
+            paddingTop: 4,
+            paddingBottom: 8,
+            borderTopWidth: 1,
+            borderColor: StyleConstants.BRIGHT_GRAY,
+        }}>
+            {renderSingleTabBar(0, 'drag')}
+            {renderSingleTabBar(1, 'heart-outline')}
+        </View>;
+    };
+
+    function chunkArrayInGroups(arr, size) {
+        let myArray = [];
+        for (let i = 0; i < arr.length; i += size) {
+            myArray.push(arr.slice(i, i + size));
+        }
+        return myArray;
+    }
+
+    const renderRecentPosts = () => {
+        let tmpArr = chunkArrayInGroups(props.user.latestPosts, 3);
+
+        tmpArr = tmpArr.map((subArr, index) => {
+            return <View style={{flexDirection: 'row'}} key={index}>
+                {subArr.map((post, _index) => <Image
+                    key={post.thumbnailImage}
+                    style={{width: Dimensions.get('window').width / 3, height: 230, marginHorizontal: 1}}
+                    resizeMode={'contain'}
+                    source={{
+                        uri: post.thumbnailImage,
+                    }}
+                />)}
+            </View>;
+        });
+
+        return <View>
+            {tmpArr}
+        </View>;
+    };
+
+    const renderRecentLikes = () => {
+        return <View>
+            <Text style={{marginTop: 16}}>Hi</Text>
+        </View>;
+    };
+
+    const renderContent = () => {
+        console.log('currentIndex: ', currentIndex);
+
+        if (currentIndex === 0) {
+            return renderRecentPosts();
+        } else if (currentIndex === 1) {
+            return <View>
+                {renderRecentLikes()}
+            </View>;
+        }
+    };
+
+    return <ScrollView style={{backgroundColor: StyleConstants.WHITE}}>
+        <View style={{flex: 1, backgroundColor: StyleConstants.WHITE, alignItems: 'center'}}>
+            {renderProfileImage()}
+            {renderBasicInformation()}
+            {renderButtons()}
+            {renderDetails()}
+            {renderTabBars()}
+            <Tabs latestPosts={props.user.latestPosts} currentIndex={currentIndex} userName={props.user.userName}/>
+        </View>
+    </ScrollView>;
 };
 
 export default UserProfileScreenView;

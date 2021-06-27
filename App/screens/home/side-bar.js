@@ -18,9 +18,12 @@ function SideBar(props) {
 
     const renderProfileImage = (profileImageUrl) => {
         return <TouchableOpacity
-            onPress={() => props.navigation.navigate('UserProfile', {
-                user: props.item.user,
-            })}
+            onPress={() => {
+                props.stopVideo();
+                props.navigation.navigate('UserProfile', {
+                    user: props.item.user,
+                });
+            }}
             style={{
                 width: 48,
                 height: 48,

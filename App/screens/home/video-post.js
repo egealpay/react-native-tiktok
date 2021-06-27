@@ -15,6 +15,7 @@ const VideoPost = ({item, index, navigation}) => {
         height: Dimensions.get('window').height - useBottomTabBarHeight(),
     }}>
         <SideBar
+            stopVideo={() => setIsPaused(true)}
             navigation={navigation}
             item={item}/>
         <TouchableWithoutFeedback onPress={() => setIsPaused(!isPaused)}>

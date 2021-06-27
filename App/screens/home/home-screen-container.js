@@ -11,7 +11,20 @@ function HomeScreenContainer(props) {
             numFollowing: '1210',
             numFollowers: '118.5M',
             numLikes: '9.5B',
-            profileDetails: 'No bio yet.'
+            profileDetails: 'No bio yet.',
+            latestPosts: [{
+                thumbnailImage: 'https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/6d03e856d1aa468485bd0dd3d6a20b98?x-expires=1624809600&x-signature=rq9zNrJaR70GhxVBP2tbBz9z9Ec%3D'
+            }, {
+                thumbnailImage: 'https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/95134b89e6b24fe5a96caa2da1959e34_1624725354?x-expires=1624809600&x-signature=dx8obj0eDwVIw5C1erpzFnWm0DY%3D'
+            }, {
+                thumbnailImage: 'https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/ca38271f29864857b09adb1a2a1b06ff?x-expires=1624809600&x-signature=0C9wX3yzwtRidKIMTwaOoENivkI%3D'
+            }, {
+                thumbnailImage: 'https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/769963a2679b4d4f8d09b161ddbd1b65?x-expires=1624809600&x-signature=g2tptkkUOmBpZKxv%2Bavfk11KqLs%3D'
+            }, {
+                thumbnailImage: 'https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/94931601c9e14641803d04ee0eb6aa70?x-expires=1624809600&x-signature=g0u9IKhZro2ieoL5gNDT2UteZyo%3D'
+            }, {
+                thumbnailImage: 'https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/f12993ef3db742ddb4251a150788aad4?x-expires=1624809600&x-signature=U6ZYul%2BwxC%2BB68%2B0HyKkne6RNlQ%3D'
+            }]
         },
         numOfLikes: '27.0K',
         numOfComments: '333',
@@ -25,7 +38,8 @@ function HomeScreenContainer(props) {
             numFollowing: '2451',
             numFollowers: '81.5M',
             numLikes: '5.3B',
-            profileDetails: 'OBSESSED out on all platforms.'
+            profileDetails: 'OBSESSED out on all platforms.',
+            latestPosts: []
         },
         numOfLikes: '12.0K',
         numOfComments: '71',

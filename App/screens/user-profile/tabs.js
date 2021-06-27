@@ -1,58 +1,59 @@
 import React from 'react';
-import {useWindowDimensions, View, Dimensions} from 'react-native';
-import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {View, Dimensions, Image, Text} from 'react-native';
 import StyleConstants from '../../styles';
 
 
-const Tabs = props => {
-    const layout = useWindowDimensions();
+const Tabs = ({latestPosts, currentIndex, userName}) => {
 
-    const [index, setIndex] = React.useState(0);
-    const [routes] = React.useState([
-        {key: 'first', icon: 'drag', title: 'First'},
-        {key: 'second', icon: 'heart-outline', title: 'Second'},
-    ]);
+    function chunkArrayInGroups(arr, size) {
+        let myArray = [];
+        for (let i = 0; i < arr.length; i += size) {
+            myArray.push(arr.slice(i, i + size));
+        }
+        return myArray;
+    }
 
-    const FirstRoute = () => (
-        <View style={{flex: 1}}/>
-    );
+    const renderRecentPosts = () => {
+        let tmpArr = chunkArrayInGroups(latestPosts, 3);
 
-    const SecondRoute = () => (
-        <View style={{flex: 1}}/>
-    );
-
-    const renderScene = SceneMap({
-        first: FirstRoute,
-        second: SecondRoute,
-    });
-
-    return <View style={{flex: 1, marginTop: 16}}>
-        <TabView
-            navigationState={{index, routes}}
-            renderScene={renderScene}
-            onIndexChange={setIndex}
-            style={{width: layout.width}}
-            renderTabBar={props =>
-                <TabBar
-                    {...props}
-                    renderIcon={({route, focused, color}) => (
-                        <MaterialCommunityIcons
-                            name={route.icon}
-                            size={24}
-                            color={focused ? '#000' : StyleConstants.SPANISH_GRAY}
-                        />
-                    )}
-                    renderLabel={({route, focused, color}) => null}
-                    style={{backgroundColor: StyleConstants.WHITE}}
-                    indicatorStyle={{
-                        width: 32,
-                        left: (Dimensions.get('window').width / 2 - 32) / 2,
-                        backgroundColor: '#000',
+        tmpArr = tmpArr.map((subArr, index) => {
+            return <View style={{flexDirection: 'row'}} key={index}>
+                {subArr.map((post, _index) => <Image
+                    key={post.thumbnailImage}
+                    style={{width: Dimensions.get('window').width / 3, height: 230, marginHorizontal: 1}}
+                    resizeMode={'contain'}
+                    source={{
+                        uri: post.thumbnailImage,
                     }}
-                />
-            }
-        />
+                />)}
+            </View>;
+        });
+
+        return <View>
+                {tmpArr}
+            </View>;
+    };
+
+    const renderRecentLikes = () => {
+        return <View style={{marginTop: 48, alignItems: 'center'}}>
+            <Text style={{fontWeight: '600'}}>This user's liked videos are private</Text>
+            <Text style={{marginTop: 16, color: StyleConstants.SPANISH_GRAY}}>Videos liked by {userName} are currently
+                hidden</Text>
+        </View>;
+    };
+
+    const renderContent = () => {
+        if (currentIndex === 0) {
+            return renderRecentPosts();
+        } else if (currentIndex === 1) {
+            return <View>
+                {renderRecentLikes()}
+            </View>;
+        }
+    };
+
+    return <View>
+        {renderContent()}
     </View>;
 };
 
