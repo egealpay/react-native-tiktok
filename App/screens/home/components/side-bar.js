@@ -48,7 +48,15 @@ function SideBar(props) {
         </TouchableOpacity>;
     };
 
-    return <View style={{zIndex: 10, paddingRight: 8, marginBottom: 16, alignItems: 'center'}}>
+    return <View style={{
+        zIndex: 1,
+        paddingRight: 8,
+        marginBottom: 16,
+        alignItems: 'center',
+        alignSelf: 'flex-end',
+        justifyContent: 'flex-end',
+        flex: 1,
+    }}>
         {renderProfileImage(props.item.user.profileImageUrl)}
         {renderIconAndText('heart', props.item.numOfLikes)}
         {renderIconAndText('commenting', props.item.numOfComments)}

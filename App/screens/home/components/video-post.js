@@ -1,19 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Video from 'react-native-video';
 import {TouchableWithoutFeedback, View, Dimensions} from 'react-native';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import SideBar from './side-bar';
+import VideoPausedIcon from './video-paused-icon';
 
 const VideoPost = ({item, navigation}) => {
     const [isPaused, setIsPaused] = useState(true);
 
     return <View style={{
-        alignItems: 'flex-end',
-        justifyContent: 'flex-end',
         width: '100%',
         height: Dimensions.get('window').height - useBottomTabBarHeight(),
     }}>
+        {isPaused && <VideoPausedIcon playVideo={() => setIsPaused(false)}/>}
         <SideBar
             stopVideo={() => setIsPaused(true)}
             navigation={navigation}
