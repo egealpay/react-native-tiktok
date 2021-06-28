@@ -1,9 +1,6 @@
 import React from 'react';
 import {Image, View, Text, ScrollView, Dimensions} from 'react-native';
 import StyleConstants from '../../styles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import Tabs from './components/tabs';
 import BasicInfo from './components/basic-info';
 

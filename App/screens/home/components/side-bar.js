@@ -1,5 +1,5 @@
 import React from 'react';
-import StyleConstants from '../../styles';
+import StyleConstants from '../../../styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import {View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -12,7 +12,12 @@ function SideBar(props) {
     const renderIconAndText = (iconName, text) => {
         return <TouchableOpacity style={{marginBottom: 24}}>
             <Fontisto name={iconName} size={ICON_SIZE} color={ICON_COLOR}/>
-            <Text style={{marginTop: 8, textAlign: 'center', color: ICON_COLOR, fontSize: 14}}>{text}</Text>
+            <Text style={{
+                marginTop: 8,
+                textAlign: 'center',
+                color: ICON_COLOR,
+                fontSize: StyleConstants.fontSizeS,
+            }}>{text}</Text>
         </TouchableOpacity>;
     };
 

@@ -5,7 +5,7 @@ import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import SideBar from './side-bar';
 
-const VideoPost = ({item, index, navigation}) => {
+const VideoPost = ({item, navigation}) => {
     const [isPaused, setIsPaused] = useState(true);
 
     return <View style={{
