@@ -42,5 +42,9 @@ export const TRANSLATIONS_EN = {
     'search': 'Search',
     'trending': 'Trending',
     'hash': 'hashtag',
-    'music': 'sound'
+    'music': 'sound',
+    'following': 'Following',
+    'followers': 'Followers',
+    'likes': 'Likes',
+    'follow': 'Follow'
 };
