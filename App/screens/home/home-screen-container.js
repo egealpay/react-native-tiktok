@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import HomeScreenView from './home-screen-view';
+import {useTranslation} from 'react-i18next';
 
 function HomeScreenContainer(props) {
+    const {t, i18n} = useTranslation();
+
     const [posts, setPosts] = useState([{
         id: 1,
         video: require('../../assets/ssstiktok_1624187822.mp4'),
@@ -52,7 +55,7 @@ function HomeScreenContainer(props) {
         numOfShare: '58',
     }]);
 
-    return <HomeScreenView navigation={props.navigation} posts={posts}/>;
+    return <HomeScreenView navigation={props.navigation} posts={posts} t={t}/>;
 }
 
 export default HomeScreenContainer;
