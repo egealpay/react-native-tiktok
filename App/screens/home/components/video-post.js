@@ -5,6 +5,7 @@ import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import SideBar from './side-bar';
 import VideoPausedIcon from './video-paused-icon';
+import PostDetails from './post-details';
 
 const VideoPost = ({item, navigation}) => {
     const [isPaused, setIsPaused] = useState(true);
@@ -18,6 +19,7 @@ const VideoPost = ({item, navigation}) => {
             stopVideo={() => setIsPaused(true)}
             navigation={navigation}
             item={item}/>
+        <PostDetails post={item}/>
         <TouchableWithoutFeedback onPress={() => setIsPaused(!isPaused)}>
             <Video source={item.video}
                    paused={isPaused}

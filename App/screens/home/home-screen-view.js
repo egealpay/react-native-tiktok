@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList, Dimensions} from 'react-native';
+import {View, FlatList} from 'react-native';
 import VideoPost from './components/video-post';
 import FeedPreference from './components/feed-preference';
 

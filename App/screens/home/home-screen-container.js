@@ -32,6 +32,7 @@ function HomeScreenContainer(props) {
         numOfLikes: '27.0K',
         numOfComments: '333',
         numOfShare: '216',
+        dateOfPost: '06-20',
     }, {
         id: 2,
         video: require('../../assets/ssstiktok_1624522820.mp4'),
@@ -53,6 +54,8 @@ function HomeScreenContainer(props) {
         numOfLikes: '12.0K',
         numOfComments: '71',
         numOfShare: '58',
+        dateOfPost: '06-18',
+        postDetails: 'I am obsessed.'
     }]);
 
     return <HomeScreenView navigation={props.navigation} posts={posts} t={t}/>;
