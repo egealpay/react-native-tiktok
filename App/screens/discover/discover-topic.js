@@ -15,9 +15,7 @@ function DiscoverTopic({item, index, t}) {
                 renderItem={({item}) => <Image
                     style={{width: 105, height: 187, marginHorizontal: 2}}
                     resizeMode={'contain'}
-                    source={{
-                        uri: item,
-                    }}
+                    source={item}
                 />}
             />
         </View>;
