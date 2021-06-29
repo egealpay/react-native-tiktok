@@ -13,7 +13,27 @@ const BasicInfo = props => {
         </View>;
     };
 
+    const renderAccountOwnerButtons = () => {
+        return <View style={{flexDirection: 'row', marginTop: 16}}>
+            <TouchableOpacity style={{borderRadius: 4, borderWidth: 1, borderColor: StyleConstants.SILVER_SAND}}>
+                <Text style={{
+                    fontSize: StyleConstants.fontSizeM,
+                    color: StyleConstants.BLACK,
+                    paddingHorizontal: 48,
+                    paddingVertical: 16,
+                    fontWeight: '700',
+                }}>{props.t('editProfile')}</Text>
+            </TouchableOpacity>
+            <View style={styles.smallButtonContainer}>
+                <Ionicons name={'bookmark-outline'} size={18}/>
+            </View>
+        </View>
+    }
+
     const renderButtons = () => {
+        if (props.isAccountOwner)
+            return renderAccountOwnerButtons();
+
         return <View style={{flexDirection: 'row', marginTop: 16}}>
             <TouchableOpacity style={{backgroundColor: StyleConstants.RED}}>
                 <Text style={{

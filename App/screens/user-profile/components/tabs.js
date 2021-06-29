@@ -6,7 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import MiscUtil from '../../../utils/misc-util';
 
 
-const Tabs = ({latestPosts, userName}) => {
+const Tabs = ({latestPosts, userName, isAccountOwner}) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
 
     const renderRecentPosts = () => {
@@ -32,9 +32,20 @@ const Tabs = ({latestPosts, userName}) => {
 
     const renderRecentLikes = () => {
         return <View style={{marginTop: 48, alignItems: 'center'}}>
-            <Text style={{fontWeight: '600'}}>This user's liked videos are private</Text>
-            <Text style={{marginTop: 16, color: StyleConstants.SPANISH_GRAY}}>Videos liked by {userName} are currently
-                hidden</Text>
+            <Text
+                style={{fontWeight: '600'}}>{isAccountOwner ? 'Only you can see which videos you liked' : 'This user\'s liked videos are private'}</Text>
+            <Text style={{marginTop: 16, color: StyleConstants.SPANISH_GRAY}}>
+                {isAccountOwner ? 'You can change this in Privacy settings' : `Videos liked by ${userName} are currently hidden`}</Text>
+        </View>;
+    };
+
+    const renderPrivateVideos = () => {
+        return <View style={{marginTop: 48, alignItems: 'center'}}>
+            <Text style={{fontWeight: '600'}}>Your private videos</Text>
+            <Text style={{marginTop: 8, color: StyleConstants.SPANISH_GRAY, textAlign: 'center', lineHeight: 30}}>To
+                make your video
+                visible only to
+                yourself, set it to "Private" in the video's privacy settings</Text>
         </View>;
     };
 
@@ -44,6 +55,10 @@ const Tabs = ({latestPosts, userName}) => {
         } else if (currentIndex === 1) {
             return <View>
                 {renderRecentLikes()}
+            </View>;
+        } else if (currentIndex === 2) {
+            return <View>
+                {renderPrivateVideos()}
             </View>;
         }
     };
@@ -73,6 +88,7 @@ const Tabs = ({latestPosts, userName}) => {
         }}>
             {renderSingleTabBar(0, 'drag')}
             {renderSingleTabBar(1, 'heart-outline')}
+            {isAccountOwner && renderSingleTabBar(2, 'lock-outline')}
         </View>;
     };
 

@@ -47,5 +47,6 @@ export const TRANSLATIONS_EN = {
     'followers': 'Followers',
     'likes': 'Likes',
     'follow': 'Follow',
-    'forYou': 'For You'
+    'forYou': 'For You',
+    'editProfile': 'Edit profile'
 };

@@ -9,8 +9,8 @@ const UserProfileScreenView = props => {
 
     return <ScrollView style={{backgroundColor: StyleConstants.WHITE}}>
         <View style={{flex: 1, backgroundColor: StyleConstants.WHITE, alignItems: 'center'}}>
-            <BasicInfo user={props.user} t={props.t}/>
-            <Tabs latestPosts={props.user.latestPosts} userName={props.user.userName}/>
+            <BasicInfo user={props.user} t={props.t} isAccountOwner={props.isAccountOwner}/>
+            <Tabs latestPosts={props.user.latestPosts} userName={props.user.userName} isAccountOwner={props.isAccountOwner}/>
         </View>
     </ScrollView>;
 };
