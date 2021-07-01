@@ -1,16 +1,20 @@
 import React from 'react';
-import EmptyScreen from '../../components/empty-screen';
+import {View, FlatList} from 'react-native';
 import StyleConstants from '../../styles';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import BaseView from '../../components/base-view';
+import FollowNotification from './components/follow-notification';
 
-const InboxScreenView = props =>
-    <BaseView
-        style={{justifyContent: 'center', alignItems: 'center'}}>
-        <EmptyScreen
-            icon={<MaterialCommunityIcons name={'message-text-outline'} size={64} color={StyleConstants.SILVER_SAND}/>}
-            text={props.t('inboxScreenNotSignedInMessage')}/>
-    </BaseView>;
+const InboxScreenView = props => {
+
+    return <View
+        style={{flex: 1, backgroundColor: StyleConstants.WHITE}}>
+        <FlatList
+            data={props.data}
+            renderItem={({item, index}) => <FollowNotification item={item} t={props.t}/>}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item, index) => index}
+        />
+    </View>;
+};
 
 export default InboxScreenView;
 

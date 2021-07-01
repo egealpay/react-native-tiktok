@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreenContainer from '../screens/home/home-screen-container';
+import CreateScreenContainer from '../screens/create/create-screen-container';
 
 const createStack = createStackNavigator();
 
@@ -11,7 +11,7 @@ const CreateStack = props => {
         }}>
         <createStack.Screen
             name="CreateStack"
-            component={HomeScreenContainer}
+            component={CreateScreenContainer}
         />
     </createStack.Navigator>;
 }
