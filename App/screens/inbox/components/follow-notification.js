@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, Text, View} from 'react-native';
 import StyleConstants from '../../../styles';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import Button from '../../../components/button';
 
 const FollowNotification = ({item, t}) => {
     return <View style={{flexDirection: 'row', alignItems: 'center', paddingHorizontal: 8, paddingVertical: 8}}>
@@ -22,14 +23,7 @@ const FollowNotification = ({item, t}) => {
                 {t('startedFollowingYou')}
             </Text>
         </View>
-        <TouchableOpacity style={{
-            backgroundColor: StyleConstants.RED,
-            paddingVertical: 8,
-            paddingHorizontal: 32,
-            borderRadius: 4,
-        }}>
-            <Text style={{color: StyleConstants.WHITE}}>{t('follow')}</Text>
-        </TouchableOpacity>
+        <Button text={'follow'} style={{paddingHorizontal: 32}}/>
     </View>;
 };
 

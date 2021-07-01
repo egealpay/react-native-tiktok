@@ -4,6 +4,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import StyleConstants from '../../../styles';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Button from '../../../components/button';
 
 const BasicInfo = props => {
 
@@ -27,23 +28,16 @@ const BasicInfo = props => {
             <View style={styles.smallButtonContainer}>
                 <Ionicons name={'bookmark-outline'} size={18}/>
             </View>
-        </View>
-    }
+        </View>;
+    };
 
     const renderButtons = () => {
-        if (props.isAccountOwner)
+        if (props.isAccountOwner) {
             return renderAccountOwnerButtons();
+        }
 
         return <View style={{flexDirection: 'row', marginTop: 16}}>
-            <TouchableOpacity style={{backgroundColor: StyleConstants.RED}}>
-                <Text style={{
-                    fontSize: StyleConstants.fontSizeM,
-                    color: StyleConstants.WHITE,
-                    paddingHorizontal: 48,
-                    paddingVertical: 16,
-                    fontWeight: '700',
-                }}>{props.t('follow')}</Text>
-            </TouchableOpacity>
+            <Button text={'follow'} style={{paddingHorizontal: 48, paddingVertical: 16}}/>
             <View style={styles.smallButtonContainer}>
                 <MaterialCommunityIcons name={'instagram'} size={24}/>
             </View>

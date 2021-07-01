@@ -6,7 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import SignUpButton from '../../components/sign-up-button';
+import Button from '../../components/button';
 import MiscUtil from '../../utils/misc-util';
 import SignUpModal from '../../components/sign-up-modal';
 
@@ -18,7 +18,7 @@ const SettingsScreenView = props => {
             data: [{
                 title: 'myAccount',
                 icon: <Ionicons name={'person-outline'} size={18} color={StyleConstants.SPANISH_GRAY}/>,
-                rightIcon: <SignUpButton style={{paddingHorizontal: 12, paddingVertical: 4}}/>,
+                rightIcon: <Button style={{paddingHorizontal: 12, paddingVertical: 4}} text={'signUp'}/>,
                 onPress: () => props.toggleSignUpModal(),
             }, {
                 title: 'privacy',

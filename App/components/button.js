@@ -5,15 +5,15 @@ import {useTranslation} from 'react-i18next';
 import SignUpModal from './sign-up-modal';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const SignUpButton = props => {
+const Button = props => {
     const {t, i18n} = useTranslation();
     const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false);
 
     return <View>
         <TouchableOpacity
             onPress={() => setIsSignUpModalVisible(true)}
-            style={[{backgroundColor: StyleConstants.RED, paddingVertical: 8, paddingHorizontal: 96}, props.style]}>
-            <Text style={{textAlign: 'center', color: StyleConstants.WHITE, fontWeight: 'bold'}}>{t('signUp')}</Text>
+            style={[{backgroundColor: StyleConstants.RED, paddingVertical: 8}, props.style]}>
+            <Text style={{textAlign: 'center', color: StyleConstants.WHITE, fontWeight: 'bold'}}>{t(props.text)}</Text>
         </TouchableOpacity>
         <SignUpModal t={t} isVisible={isSignUpModalVisible}
                      onBackdropPress={() => setIsSignUpModalVisible(false)}
@@ -21,4 +21,4 @@ const SignUpButton = props => {
     </View>;
 };
 
-export default SignUpButton;
+export default Button;
