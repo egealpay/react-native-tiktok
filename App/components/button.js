@@ -11,9 +11,8 @@ const Button = props => {
 
     return <View>
         <TouchableOpacity
-            onPress={() => setIsSignUpModalVisible(true)}
             style={[{backgroundColor: StyleConstants.RED, paddingVertical: 8}, props.style]}>
-            <Text style={{textAlign: 'center', color: StyleConstants.WHITE, fontWeight: 'bold'}}>{t(props.text)}</Text>
+            <Text style={[{textAlign: 'center', color: StyleConstants.WHITE, fontWeight: 'bold'}, props.textStyle]}>{t(props.text)}</Text>
         </TouchableOpacity>
         <SignUpModal t={t} isVisible={isSignUpModalVisible}
                      onBackdropPress={() => setIsSignUpModalVisible(false)}

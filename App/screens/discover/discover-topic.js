@@ -35,7 +35,7 @@ function DiscoverTopic({item, index, t}) {
                 <Feather name={item.type} size={20}/>
             </View>
             <View style={{flex: 1, paddingLeft: 16}}>
-                <Text style={{fontWeight: '600', fontSize: 16}}>{item.name}</Text>
+                <Text style={{fontWeight: '600', fontSize: StyleConstants.fontSizeM}}>{item.name}</Text>
                 <Text style={{marginTop: 8, color: StyleConstants.SPANISH_GRAY}}>{t('trending')} {t(item.type)}</Text>
             </View>
             <View style={{

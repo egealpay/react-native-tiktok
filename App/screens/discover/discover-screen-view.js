@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import BaseView from '../../components/base-view';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import StyleConstants from '../../styles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -9,6 +9,8 @@ import DiscoverTopic from './discover-topic';
 
 
 function DiscoverScreenView(props) {
+    const insets = useSafeAreaInsets();
+
     const [discoverList, setDiscoverList] = useState([{
         'name': 'koşarakuzaklaş',
         'type': 'hash',
@@ -20,7 +22,7 @@ function DiscoverScreenView(props) {
             require('../../assets/kosarakuzaklas4.jpeg'),
             require('../../assets/kosarakuzaklas5.jpeg'),
             require('../../assets/kosarakuzaklas6.jpeg'),
-            require('../../assets/kosarakuzaklas7.jpeg')
+            require('../../assets/kosarakuzaklas7.jpeg'),
         ],
     }, {
         'name': 'Savage - Megan Thee Stallion',
@@ -49,7 +51,11 @@ function DiscoverScreenView(props) {
             alignItems: 'center',
         }}>
             <MaterialIcons name={'search'} size={24}/>
-            <Text style={{marginLeft: 8, fontSize: 18, color: StyleConstants.SPANISH_GRAY}}>{props.t('search')}</Text>
+            <Text style={{
+                marginLeft: 8,
+                fontSize: StyleConstants.fontSizeL,
+                color: StyleConstants.SPANISH_GRAY,
+            }}>{props.t('search')}</Text>
         </View>;
     };
 
@@ -66,13 +72,18 @@ function DiscoverScreenView(props) {
         </View>;
     };
 
-    return <BaseView>
+    return <View
+        style={{
+            paddingTop: insets.top,
+            backgroundColor: StyleConstants.WHITE,
+            flex: 1,
+        }}>
         {renderTopBar()}
         <ScrollView>
             <DiscoverCarousel/>
             {renderDiscoverList()}
         </ScrollView>
-    </BaseView>;
+    </View>;
 }
 
 export default DiscoverScreenView;

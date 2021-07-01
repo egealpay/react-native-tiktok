@@ -16,15 +16,15 @@ const BasicInfo = props => {
 
     const renderAccountOwnerButtons = () => {
         return <View style={{flexDirection: 'row', marginTop: 16}}>
-            <TouchableOpacity style={{borderRadius: 4, borderWidth: 1, borderColor: StyleConstants.SILVER_SAND}}>
-                <Text style={{
-                    fontSize: StyleConstants.fontSizeM,
-                    color: StyleConstants.BLACK,
-                    paddingHorizontal: 48,
-                    paddingVertical: 16,
-                    fontWeight: '700',
-                }}>{props.t('editProfile')}</Text>
-            </TouchableOpacity>
+            <Button text={'editProfile'}
+                    textStyle={{color: StyleConstants.BLACK, fontSize: StyleConstants.fontSizeM}}
+                    style={{
+                        paddingVertical: 16,
+                        paddingHorizontal: 48,
+                        backgroundColor: StyleConstants.WHITE,
+                        borderWidth: 1,
+                        borderColor: StyleConstants.SILVER_SAND,
+                    }}/>
             <View style={styles.smallButtonContainer}>
                 <Ionicons name={'bookmark-outline'} size={18}/>
             </View>
