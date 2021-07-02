@@ -44,5 +44,6 @@ $ cd ios && pod install && cd ..
 
 // Run the app (iOS)
 $ react-native run-ios
+
 </code>
 </pre>
